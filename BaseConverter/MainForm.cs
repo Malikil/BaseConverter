@@ -52,10 +52,10 @@ namespace BaseConverter
                 int temp = -1;
                 if (number[i] >= '0' && number[i] <= '9')
                     temp = number[i] - '0';
-                else if (number[i] >= 'a' && number[i] <= 'z')
-                    temp = number[i] - 'a' + 10;
                 else if (number[i] >= 'A' && number[i] <= 'Z')
-                    temp = number[i] - 'A' + 26 + 10;
+                    temp = number[i] - 'A' + 10;
+                else if (number[i] >= 'a' && number[i] <= 'z')
+                    temp = number[i] - 'a' + 26 + 10;
 
                 if (temp < 0 || temp >= b)
                     throw new ArgumentOutOfRangeException("number", number, "Invalid character for base");
